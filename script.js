@@ -51,7 +51,7 @@ async function getWeatherDefault() {
   await getWeather();
 }
 
-async function getWeather() {
+window.getWeather = async function () {
   const apiKey = config.weatherBitApiKey;
   const city = document.getElementById("cityInput").value;
 
@@ -92,4 +92,4 @@ async function getWeather() {
   } catch (error) {
     console.error("Error fetching weather data:", error);
   }
-}
+};
