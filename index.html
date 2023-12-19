@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weather Dashboard</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css"
+      rel="stylesheet"
+    />
+    <style>
+      /* Custom styles if needed */
+      .search-bar {
+        margin-bottom: 50px;
+      }
+      .search {
+        border-radius: 25px 0 0 25px;
+        padding: 15px;
+        color: white;
+      }
+      .sbmt {
+        height: 40px;
+        border-radius: 0 25px 25px 0;
+      }
+      .icon-srch {
+        border-radius: 0 25px 25px 0;
+        padding: 15px;
+        height: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+      }
+      .wind {
+        align-items: end;
+      }
+      .hmdt-value p {
+        margin-right: 10px;
+      }
+      .ws-value p {
+        margin-left: 10px;
+      }
+      .main_content {
+        height: 607px;
+      }
+    </style>
+  </head>
+  <body class="bg-gray-50">
+    <div class="min-h-screen flex flex-col items-center justify-center">
+      <div
+        class="bg-white shadow-lg rounded-lg p-8 m-4 w-full max-w-md main_content"
+      >
+        <div class="flex flex-col items-center">
+          <div class="search-bar flex justify-center items-center">
+            <input
+              type="text"
+              placeholder="Search"
+              name="cityInput"
+              id="cityInput"
+              class="outline-none bg-black h-10 search"
+            />
+            <button class="sbmt" onclick="getWeather()">
+              <i class="bi bi-search icon-srch bg-black"></i>
+            </button>
+          </div>
+          <div id="weather-icon" class="text-7xl">
+            <!-- Weather icon will be loaded here -->
+          </div>
+          <div id="temperature" class="text-3xl font-semibold">
+            <!-- Temperature will be loaded here -->
+          </div>
+          <div id="weather-description" class="text-gray-700">
+            <!-- Weather description will be loaded here -->
+          </div>
+          <div id="city-name" class="text-5xl font-semibold">
+            <!-- City Name Will be loaded here -->
+          </div>
+          <div class="flex gap-10 mt-40 text-xl">
+            <div class="mr-4">
+              <div class="font-bold">
+                <i class="bi bi-moisture pr-1"></i>Humidity
+              </div>
+              <div id="humidity" class="hmdt-value"></div>
+              <!-- Humidity will be loaded here -->
+            </div>
+            <div class="wind mr-4 flex flex-col">
+              <div class="font-bold">
+                Wind Speed
+                <i class="bi bi-wind pr-1"></i>
+              </div>
+              <div id="wind-speed" class="ws-value"></div>
+              <!-- Wind speed will be loaded here -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script type="module" src="./script.js"></script>
+  </body>
+</html>
